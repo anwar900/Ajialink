@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 14% 25%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 14% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 14% 25%;
+    --primary: 210 80% 65%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 150 50% 70%;
+    --secondary-foreground: 150 30% 20%;
+    --muted: 210 20% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 25 95% 75%;
+    --accent-foreground: 25 70% 25%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 80% 65%;
+    --radius: 0.75rem;
+
+    /* Accessibility variables */
+    --font-size-scale: 1;
+    --text-spacing-scale: 1;
+    --line-height: 1.5;
+  }
+
+  .dark {
+    --background: 222 20% 12%;
+    --foreground: 210 40% 98%;
+    --card: 222 25% 16%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 25% 16%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 70% 55%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 150 40% 50%;
+    --secondary-foreground: 150 10% 95%;
+    --muted: 217.2 32.6% 20%;
+    --muted-foreground: 215 20.2% 75%;
+    --accent: 25 80% 55%;
+    --accent-foreground: 25 10% 95%;
+    --destructive: 0 62.8% 40%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 25%;
+    --input: 217.2 32.6% 25%;
+    --ring: 210 70% 55%;
+  }
+
+  /* High contrast mode */
+  .high-contrast {
+    --foreground: 0 0% 0%;
+    --background: 0 0% 100%;
+    --primary: 210 100% 45%;
+    --secondary: 150 100% 35%;
+    --accent: 25 100% 50%;
+    --muted-foreground: 0 0% 20%;
+    --border: 0 0% 0%;
+  }
+
+  .dark.high-contrast {
+    --foreground: 0 0% 100%;
+    --background: 0 0% 0%;
+    --primary: 210 100% 70%;
+    --secondary: 150 100% 60%;
+    --accent: 25 100% 65%;
+    --muted-foreground: 0 0% 80%;
+    --border: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-size: calc(1rem * var(--font-size-scale));
+    letter-spacing: calc(0.01em * var(--text-spacing-scale));
+    line-height: var(--line-height);
+  }
+
+  /* Apply font size scaling to all text elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  button,
+  input,
+  textarea,
+  label,
+  li {
+    font-size: calc(1em * var(--font-size-scale));
+    letter-spacing: calc(0.01em * var(--text-spacing-scale));
+    line-height: var(--line-height);
+  }
+
+  /* RTL specific adjustments */
+  [dir="rtl"] .app-logo {
+    letter-spacing: 0;
+  }
+
+  [dir="rtl"] .icon-flip {
+    transform: scaleX(-1);
+  }
+
+  [dir="rtl"] .rtl-mirror {
+    transform: scaleX(-1);
+  }
+
+  /* Reduce motion */
+  .reduce-motion * {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.app-logo {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* RTL support for various components */
+[dir="rtl"] .rtl-mirror {
+  transform: scaleX(-1);
+}
+
+/* Preview mode indicator */
+.preview-mode-active {
+  position: relative;
+}
+
+.preview-mode-active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid hsl(var(--primary));
+  pointer-events: none;
+  z-index: 10;
+  border-radius: var(--radius);
+}
+
