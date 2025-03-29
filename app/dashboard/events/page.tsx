@@ -5,6 +5,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Calendar, Plus, Filter } from "lucide-react"
 import { EventCard } from "@/components/event-card"
 import { useLanguage } from "@/components/language-context"
+import Image from "next/image";
+import type React from "react";
 
 export default function EventsPage() {
   const { t, dir } = useLanguage()
@@ -13,15 +15,17 @@ export default function EventsPage() {
     <div className="container px-4 py-6 space-y-6" dir={dir}>
       <header className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">{t("navigation.events")}</h1>
+          <div className="flex items-center mb-2">
+            <Image src="/Logo.png" alt={t("common.appName")} width={800} height={200} className="h-12 w-auto"/>
+          </div>
         </div>
         <div className="flex gap-2">
           <Button size="icon" variant="outline">
-            <Filter className="h-5 w-5" />
+            <Filter className="h-5 w-5"/>
             <span className="sr-only">{t("events.filter")}</span>
           </Button>
           <Button size="icon">
-            <Plus className="h-5 w-5" />
+            <Plus className="h-5 w-5"/>
             <span className="sr-only">{t("events.createEvent")}</span>
           </Button>
         </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -10,6 +10,7 @@ import { Search, Plus, Filter, Users, Archive, Clock, CheckCheck } from "lucide-
 import Link from "next/link"
 import { ProfilePoints } from "@/components/profile-points"
 import { useLanguage } from "@/components/language-context"
+import Image from "next/image";
 
 export default function MessagesPage() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -96,21 +97,23 @@ export default function MessagesPage() {
     <div className="container px-4 py-6 space-y-6" dir={dir}>
       <header className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">{t("navigation.messages")}</h1>
+          <div className="flex items-center mb-2">
+            <Image src="/Logo.png" alt={t("common.appName")} width={800} height={200} className="h-12 w-auto"/>
+          </div>
         </div>
         <div className="flex items-center gap-3">
           <Button size="icon">
-            <Plus className="h-5 w-5" />
+            <Plus className="h-5 w-5"/>
             <span className="sr-only">{t("messages.newMessage")}</span>
           </Button>
-          <ProfilePoints points={250} initials="SJ" />
+          <ProfilePoints points={250} initials="SJ"/>
         </div>
       </header>
 
       <div className="flex items-center gap-2">
         <div className="relative flex-1">
           <Search
-            className={`absolute ${dir === "rtl" ? "right-3" : "left-3"} top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground`}
+              className={`absolute ${dir === "rtl" ? "right-3" : "left-3"} top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground`}
           />
           <Input
             placeholder={t("messages.searchMessages")}

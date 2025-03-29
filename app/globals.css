@@ -161,3 +161,15 @@
   border-radius: var(--radius);
 }
 
+
+/* Add responsive logo styling */
+.logo-container img {
+  height: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .logo-container img {
+    max-width: 120px;
+  }
+}

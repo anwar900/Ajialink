@@ -13,6 +13,7 @@ import { ProfilePoints } from "@/components/profile-points"
 import { useEffect, useRef, useState } from "react"
 import { useLanguage } from "@/components/language-context"
 import { LanguageSelector } from "@/components/language-selector"
+import Image from "next/image";
 
 export default function Dashboard() {
   const { t, dir } = useLanguage()
@@ -21,14 +22,16 @@ export default function Dashboard() {
     <div className="container px-4 py-6 space-y-6" dir={dir}>
       <header className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold app-logo mb-1">{t("common.appName")}</h1>
+          <div className="flex items-center mb-2">
+            <Image src="/Logo.png" alt={t("common.appName")} width={800} height={200} className="h-12 w-auto"/>
+          </div>
         </div>
         <div className="flex items-center gap-2">
           <Button size="icon" variant="ghost">
-            <Search className="h-5 w-5" />
+            <Search className="h-5 w-5"/>
             <span className="sr-only">Search</span>
           </Button>
-          <ProfilePoints points={250} initials="SJ" />
+          <ProfilePoints points={250} initials="SJ"/>
         </div>
       </header>
 

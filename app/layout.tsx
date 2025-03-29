@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "BridgeGen",
   },
-    generator: 'v0.dev'
+    generator: 'imad.dev'
 }
 
 export default function RootLayout({
