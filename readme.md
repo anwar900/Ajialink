@@ -134,8 +134,6 @@ yarn start
 
 This will start the production server at [http://localhost:3000](http://localhost:3000).
 
-## Deployment
-
 
 
 ## License
