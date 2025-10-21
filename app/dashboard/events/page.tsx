@@ -16,7 +16,7 @@ export default function EventsPage() {
       <header className="flex items-center justify-between">
         <div>
           <div className="flex items-center mb-2">
-            <Image src="/Logo.png" alt={t("common.appName")} width={800} height={200} className="h-12 w-auto"/>
+            <Image src="/logo.png" alt={t("common.appName")} width={800} height={200} className="h-12 w-auto"/>
           </div>
         </div>
         <div className="flex gap-2">

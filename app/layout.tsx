@@ -13,13 +13,13 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "BridgeGen",
+  title: "Ajialink",
   description: "Bridging generations through mutual learning and community",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "BridgeGen",
+    title: "Ajialink",
   },
     generator: 'imad.dev'
 }

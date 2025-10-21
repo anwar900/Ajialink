@@ -72,12 +72,12 @@ export default function Home() {
               transition={{ duration: 0.5 }}
           >
             <Image
-                src="/ajyalink logo.png"
+                src="/ajialink-logo.png"
                 alt="Ajyal Link"
                 width={1400}
                 height={1120}
                 priority
-                className="mx-auto drop-shadow-xl"
+                className="mx-auto w-full max-w-md drop-shadow-xl"
             />
           </motion.div>
 
