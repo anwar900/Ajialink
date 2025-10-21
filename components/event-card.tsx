@@ -22,7 +22,7 @@ export function EventCard({ title, host, date, location, attendees, image, categ
 
   return (
     <Card className="overflow-hidden">
-      <div className="relative h-40">
+      <div className="relative aspect-video">
         <img src={image || "/placeholder.svg"} alt={title} className="w-full h-full object-cover" />
       </div>
       <CardContent className="p-4">

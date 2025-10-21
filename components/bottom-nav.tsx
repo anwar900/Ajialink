@@ -62,14 +62,17 @@ export function BottomNav() {
   }
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-10 bg-background/80 backdrop-blur-md border-t" dir={dir}>
-      <div className="flex justify-around relative">
+    <nav className="fixed bottom-0 left-0 right-0 z-10 bg-background/80 backdrop-blur-md border-t transform-gpu" dir={dir}>
+      <div className="flex items-start">
         {links.map((link) => {
-          const isActive = pathname === link.href
+          const isActive =
+            link.href === "/dashboard"
+              ? pathname === link.href
+              : pathname.startsWith(link.href)
           const Icon = link.icon
 
           return (
-            <Link key={link.href} href={link.href} className="flex flex-col items-center py-2 px-3 relative">
+            <Link key={link.href} href={link.href} className="flex-1 flex flex-col items-center py-2 px-1 relative text-center">
               <div className="relative">
                 {isActive && (
                   <motion.div
@@ -96,7 +99,7 @@ export function BottomNav() {
               {isActive && (
                 <motion.div
                   layoutId="bottomNavLine"
-                  className="absolute bottom-0 w-12 h-0.5 bg-primary rounded-full"
+                  className="absolute bottom-0 w-6 h-0.5 bg-primary rounded-full"
                   initial={false}
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />

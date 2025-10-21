@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next"
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Ajyal Link",
-    short_name: "Ajyal Link",
+    name: "Ajyalink",
+    short_name: "Ajyalink",
     description: "Bridging generations through mutual learning and community",
     start_url: "/",
     display: "standalone",

@@ -169,25 +169,25 @@ function SponsorCarousel() {
   const bannerAds = [
     {
       id: 1,
-      image: "/banner1.png?height=50&width=600",
+      image: "/Banner_1.png?height=90&width=728",
       alt: "Senior Care Services - Special Discount",
       link: "#senior-care",
     },
     {
       id: 2,
-      image: "/banner1.png?height=50&width=600",
+      image: "/banner1.png?height=90&width=728",
       alt: "Community Foundation - Supporting Generations",
       link: "#community-foundation",
     },
     {
       id: 3,
-      image: "/banner1.png?height=50&width=600",
+      image: "/banner1.png?height=90&width=728",
       alt: "Tech for All - Digital Skills Workshop",
       link: "#tech-for-all",
     },
     {
       id: 4,
-      image: "/banner1.png?height=50&width=600",
+      image: "/banner1.png?height=90&width=728",
       alt: "Local Library - Intergenerational Reading Program",
       link: "#local-library",
     },
@@ -220,7 +220,7 @@ function SponsorCarousel() {
 
   return (
     <section className="mb-6">
-      <div className="relative overflow-hidden rounded-lg h-[70px]">
+      <div className="relative overflow-hidden rounded-lg aspect-[5/1]">
         <div
           className="flex transition-transform duration-500 ease-out"
           style={{
@@ -414,7 +414,7 @@ function MemberOfMonthCarousel() {
           {featuredMembers.map((member) => (
             <div key={member.id} className="w-full flex-shrink-0 px-1">
               <Card className={`border-2 ${member.borderColor} overflow-hidden`}>
-                <div className="relative h-60">
+                <div className="relative aspect-square">
                   <img
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}

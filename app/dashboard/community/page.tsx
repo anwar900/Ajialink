@@ -128,7 +128,7 @@ export default function CommunityPage() {
         <TabsContent value="feed" className="mt-4 space-y-4">
           {/* Featured post / Highlight - more compact */}
           <Card className="overflow-hidden border-2 border-primary/20">
-            <div className="relative h-32 bg-gradient-to-r from-primary/20 to-secondary/20">
+            <div className="relative aspect-video bg-gradient-to-r from-primary/20 to-secondary/20">
               <img
                 src="/IMG_5285.JPG.jpg?height=128&width=600"
                 alt={t("community.featuredPost")}
@@ -502,7 +502,7 @@ function CommunityPost({
             <img
               src={images[0] || "/placeholder.svg"}
               alt="Post content"
-              className="rounded-md w-full object-cover h-32"
+              className="rounded-md w-full object-cover aspect-video"
             />
           </div>
         ) : images.length > 1 ? (
